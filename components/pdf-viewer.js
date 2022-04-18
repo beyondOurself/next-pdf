@@ -7,6 +7,7 @@ import workerSrc from "../pdf-worker";
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 export default function PDFViewer() {
+  // https://ebus.csot.tcl.com/csotfastfile-web-test/file/group1/M00/00/93/CmwHlmJdKGWAD8y6AAIcBbd5Rmw580.pdf
   const [file, setFile] = useState("./sample.pdf");
   const [numPages, setNumPages] = useState(null);
 
