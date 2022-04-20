@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState ,useEffect} from "react";
 // import default react-pdf entry
 import { Document, Page, pdfjs } from "react-pdf";
 // import pdf worker as a url, see `next.config.js` and `pdf-worker.js`
@@ -6,9 +6,15 @@ import workerSrc from "../pdf-worker";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
-export default function PDFViewer() {
-  const [file, setFile] = useState("./sample.pdf");
+export default function PDFViewer(props) {
+  const [file, setFile] = useState(null);
   const [numPages, setNumPages] = useState(null);
+
+  
+  useEffect(() => {
+    console.log(props.url)
+    setFile(props.url)
+  }, [props.url])
 
   function onFileChange(event) {
     setFile(event.target.files[0]);

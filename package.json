@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start:proxy": "NODE_ENV=production node server.js",
+    "dev:proxy": "node server.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "http-proxy-middleware": "^2.0.4",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
